@@ -1,34 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Instagram-like Profile</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Page</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="profile-header">
-      <img class="profile-pic" src="https://www.w3schools.com/w3images/avatar2.png" alt="Profile Picture">
-      <div class="profile-info">
-        <h1>My Profile</h1>
-        <p>Welcome to my personal space!</p>
-      </div>
-    </div>
-    
-    <div class="upload-section">
-      <h2>Upload your picture</h2>
-      <input type="file" id="uploadPic" accept="image/*" onchange="previewImage()" />
-      <textarea id="picDescription" placeholder="Add a description..."></textarea>
-      <button onclick="savePost()">Save Post</button>
+
+    <div class="profile">
+        <img src="profile.jpg" alt="Profile Picture">
+        <h1>My Name</h1>
     </div>
 
-    <div class="posts">
-      <h2>Your Posts</h2>
-      <div id="postGallery" class="post-gallery"></div>
+    <div class="post-form">
+        <input type="text" id="caption" placeholder="Write a caption...">
+        <input type="file" id="imageUpload">
+        <button onclick="addPost()">Post</button>
     </div>
-  </div>
 
-  <script src="script.js"></script>
+    <div class="post-grid" id="postGrid"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
