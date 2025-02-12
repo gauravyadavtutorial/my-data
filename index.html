@@ -9,9 +9,13 @@
 <body>
 
     <div class="profile">
-        <img src="profile.jpg" alt="Profile Picture">
-        <h1>My Name</h1>
-    </div>
+    <label for="profileUpload">
+        <img id="profilePic" src="profile.jpg" alt="Profile Picture">
+    </label>
+    <input type="file" id="profileUpload" accept="image/*" style="display: none;">
+    <h1>My Name</h1>
+</div>
+
 
     <div class="post-form">
         <input type="text" id="caption" placeholder="Write a caption...">
