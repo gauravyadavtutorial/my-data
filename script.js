@@ -1,63 +1,52 @@
-// Change Profile Picture
-document.addEventListener("DOMContentLoaded", function () {
-  const profilePic = document.getElementById("profilePic");
-  const profileInput = document.getElementById("profileInput");
+document.addEventListener("DOMContentLoaded", loadPosts);
 
-  profilePic.addEventListener("click", function () {
-    profileInput.click();
-  });
+function addPost() {
+    let caption = document.getElementById("caption").value;
+    let imageInput = document.getElementById("imageUpload").files[0];
 
-  profileInput.addEventListener("change", function () {
-    const file = profileInput.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        profilePic.src = e.target.result;
-        localStorage.setItem("profilePic", e.target.result);
-      };
-      reader.readAsDataURL(file);
+    if (!caption || !imageInput) {
+        alert("Please add both an image and a caption!");
+        return;
     }
-  });
 
-  // Load saved profile picture
-  if (localStorage.getItem("profilePic")) {
-    profilePic.src = localStorage.getItem("profilePic");
-  }
-});
-
-// Preview and Save Post
-function previewImage() {
-  const file = document.getElementById("uploadPic").files[0];
-  if (file) {
-    const reader = new FileReader();
+    let reader = new FileReader();
     reader.onload = function (e) {
-      sessionStorage.setItem("tempImg", e.target.result);
+        let imageUrl = e.target.result;
+
+        let posts = JSON.parse(localStorage.getItem("posts")) || [];
+        posts.push({ caption, imageUrl });
+
+        localStorage.setItem("posts", JSON.stringify(posts));
+
+        loadPosts();
     };
-    reader.readAsDataURL(file);
-  }
+
+    reader.readAsDataURL(imageInput);
 }
 
-function savePost() {
-  const imageSrc = sessionStorage.getItem("tempImg");
-  const description = document.getElementById("picDescription").value;
+function loadPosts() {
+    let postGrid = document.getElementById("postGrid");
+    postGrid.innerHTML = "";
 
-  if (imageSrc) {
-    const postGallery = document.getElementById("postGallery");
-    const newPost = document.createElement("div");
-    newPost.classList.add("post");
+    let posts = JSON.parse(localStorage.getItem("posts")) || [];
 
-    newPost.innerHTML = `
-      <img src="${imageSrc}" alt="Uploaded Image">
-      <p>${description}</p>
-    `;
+    posts.forEach((post, index) => {
+        let postElement = document.createElement("div");
+        postElement.classList.add("post");
 
-    postGallery.appendChild(newPost);
+        postElement.innerHTML = `
+            <button class="delete-btn" onclick="deletePost(${index})">X</button>
+            <img src="${post.imageUrl}" alt="Post Image">
+            <p>${post.caption}</p>
+        `;
 
-    // Clear input fields
-    document.getElementById("uploadPic").value = "";
-    document.getElementById("picDescription").value = "";
-    sessionStorage.removeItem("tempImg");
-  } else {
-    alert("Please upload an image first!");
-  }
+        postGrid.appendChild(postElement);
+    });
+}
+
+function deletePost(index) {
+    let posts = JSON.parse(localStorage.getItem("posts")) || [];
+    posts.splice(index, 1);
+    localStorage.setItem("posts", JSON.stringify(posts));
+    loadPosts();
 }
