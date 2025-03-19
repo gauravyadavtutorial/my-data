@@ -3,28 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Page</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Cloth Ceiling - Elegant Designs</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="profile">
-    <label for="profileUpload">
-        <img id="profilePic" src="profile.jpg" alt="Profile Picture">
-    </label>
-    <input type="file" id="profileUpload" accept="image/*" style="display: none;">
-    <h1>My Name</h1>
-</div>
+    <!-- Navigation Bar -->
+    <header>
+        <h1>Cloth Ceiling Designs</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h2>Luxury & Elegant Cloth Ceilings</h2>
+        <p>Transform your space with stunning cloth ceiling designs.</p>
+        <a href="#products" class="btn">View Products</a>
+    </section>
 
-    <div class="post-form">
-        <input type="text" id="caption" placeholder="Write a caption...">
-        <input type="file" id="imageUpload">
-        <button onclick="addPost()">Post</button>
-    </div>
+    <!-- Products Section -->
+    <section id="products">
+        <h2>Our Collections</h2>
+        <div class="product-container">
+            <div class="product">
+                <img src="images/ceiling1.jpg" alt="Elegant Cloth Ceiling">
+                <h3>Classic White Ceiling</h3>
+                <p>Perfect for modern homes and offices.</p>
+            </div>
+            <div class="product">
+                <img src="images/ceiling2.jpg" alt="Luxury Cloth Ceiling">
+                <h3>Royal Golden Drapes</h3>
+                <p>Add luxury to your living space.</p>
+            </div>
+            <div class="product">
+                <img src="images/ceiling3.jpg" alt="Modern Cloth Ceiling">
+                <h3>Artistic Pattern Design</h3>
+                <p>Uniquely crafted for a stylish ambiance.</p>
+            </div>
+        </div>
+    </section>
 
-    <div class="post-grid" id="postGrid"></div>
+    <!-- Contact Form -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
 
     <script src="script.js"></script>
+
 </body>
 </html>
