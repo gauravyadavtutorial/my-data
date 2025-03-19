@@ -1,5 +1,6 @@
+/* Global Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -7,25 +8,43 @@ body {
 
 /* Navigation Bar */
 header {
+    display: flex;
+    justify-content: space-between;
     background: #333;
     color: white;
-    padding: 10px 0;
+    padding: 15px 30px;
+    align-items: center;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
+    display: flex;
+    gap: 20px;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
+}
+
+.cart-icon {
+    position: relative;
+}
+
+#cart-count {
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 12px;
+    position: absolute;
+    top: -5px;
+    right: -10px;
 }
 
 /* Hero Section */
@@ -44,18 +63,19 @@ nav ul li a {
     border-radius: 5px;
 }
 
-/* Products Section */
-.product-container {
+/* Product Grid */
+.product-grid {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px;
 }
 
 .product {
     border: 1px solid #ddd;
     padding: 10px;
-    width: 300px;
+    width: 250px;
     text-align: center;
 }
 
@@ -64,24 +84,19 @@ nav ul li a {
     height: auto;
 }
 
-/* Contact Form */
-#contactForm {
-    max-width: 400px;
-    margin: auto;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-}
-
-button {
+.add-to-cart {
     background: #28a745;
     color: white;
     padding: 10px;
     border: none;
     width: 100%;
-    font-size: 18px;
+    font-size: 16px;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
 }
