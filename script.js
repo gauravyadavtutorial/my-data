@@ -1,4 +1,8 @@
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    alert("Your message has been sent successfully!");
+let cartCount = 0;
+document.querySelectorAll(".add-to-cart").forEach(button => {
+    button.addEventListener("click", () => {
+        cartCount++;
+        document.getElementById("cart-count").textContent = cartCount;
+        alert("Added to Cart!");
+    });
 });
