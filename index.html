@@ -3,62 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloth Ceiling - Elegant Designs</title>
+    <title>The Loom - Ethnic Clothing Store</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <!-- Navigation Bar -->
     <header>
-        <h1>Cloth Ceiling Designs</h1>
+        <div class="logo">The Loom</div>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Sale</a></li>
+                <li><a href="#" class="cart-icon"><i class="fa fa-shopping-cart"></i> <span id="cart-count">0</span></a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <h2>Luxury & Elegant Cloth Ceilings</h2>
-        <p>Transform your space with stunning cloth ceiling designs.</p>
-        <a href="#products" class="btn">View Products</a>
+    <section class="hero">
+        <h1>Discover Elegant Ethnic Wear</h1>
+        <p>Handcrafted styles with a modern touch</p>
+        <a href="#products" class="btn">Shop Now</a>
     </section>
 
-    <!-- Products Section -->
+    <!-- Product Section -->
     <section id="products">
-        <h2>Our Collections</h2>
-        <div class="product-container">
+        <h2>Shop the Collection</h2>
+        <div class="product-grid">
             <div class="product">
-                <img src="images/ceiling1.jpg" alt="Elegant Cloth Ceiling">
-                <h3>Classic White Ceiling</h3>
-                <p>Perfect for modern homes and offices.</p>
+                <img src="images/product1.jpg" alt="Saree">
+                <h3>Handwoven Saree</h3>
+                <p>₹2,499</p>
+                <button class="add-to-cart">Add to Cart</button>
             </div>
             <div class="product">
-                <img src="images/ceiling2.jpg" alt="Luxury Cloth Ceiling">
-                <h3>Royal Golden Drapes</h3>
-                <p>Add luxury to your living space.</p>
+                <img src="images/product2.jpg" alt="Kurta">
+                <h3>Men's Cotton Kurta</h3>
+                <p>₹1,999</p>
+                <button class="add-to-cart">Add to Cart</button>
             </div>
             <div class="product">
-                <img src="images/ceiling3.jpg" alt="Modern Cloth Ceiling">
-                <h3>Artistic Pattern Design</h3>
-                <p>Uniquely crafted for a stylish ambiance.</p>
+                <img src="images/product3.jpg" alt="Dupatta">
+                <h3>Embroidered Dupatta</h3>
+                <p>₹999</p>
+                <button class="add-to-cart">Add to Cart</button>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 The Loom. All Rights Reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 
