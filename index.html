@@ -1,67 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Loom - Ethnic Clothing Store</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Donation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #4CAF50;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      margin-top: 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    #thankYouMessage {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <header>
-        <div class="logo">The Loom</div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Women</a></li>
-                <li><a href="#">Men</a></li>
-                <li><a href="#">Accessories</a></li>
-                <li><a href="#">Sale</a></li>
-                <li><a href="#" class="cart-icon"><i class="fa fa-shopping-cart"></i> <span id="cart-count">0</span></a></li>
-            </ul>
-        </nav>
-    </header>
+  <div class="container">
+    <h1>Donate a Book</h1>
+    <form id="donationForm">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" required>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Discover Elegant Ethnic Wear</h1>
-        <p>Handcrafted styles with a modern touch</p>
-        <a href="#products" class="btn">Shop Now</a>
-    </section>
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" required>
 
-    <!-- Product Section -->
-    <section id="products">
-        <h2>Shop the Collection</h2>
-        <div class="product-grid">
-            <div class="product">
-                <img src="images/product1.jpg" alt="Saree">
-                <h3>Handwoven Saree</h3>
-                <p>₹2,499</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="images/product2.jpg" alt="Kurta">
-                <h3>Men's Cotton Kurta</h3>
-                <p>₹1,999</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="images/product3.jpg" alt="Dupatta">
-                <h3>Embroidered Dupatta</h3>
-                <p>₹999</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-        </div>
-    </section>
+      <label for="bookTitle">Book Title:</label>
+      <input type="text" id="bookTitle" required>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 The Loom. All Rights Reserved.</p>
-    </footer>
+      <label for="bookAuthor">Author:</label>
+      <input type="text" id="bookAuthor" required>
 
-    <script src="script.js"></script>
+      <label for="message">Message (optional):</label>
+      <textarea id="message" rows="4"></textarea>
+
+      <button type="submit">Submit Donation</button>
+    </form>
+
+    <div id="thankYouMessage">Thank you for your donation!</div>
+  </div>
+
+  <script>
+    document.getElementById("donationForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      // Collect form data
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const title = document.getElementById("bookTitle").value;
+      const author = document.getElementById("bookAuthor").value;
+      const message = document.getElementById("message").value;
+
+      // Here you can later add fetch() to send data to server
+      console.log("Donation submitted:", { name, email, title, author, message });
+
+      document.getElementById("donationForm").reset();
+      document.getElementById("thankYouMessage").style.display = "block";
+    });
+  </script>
 
 </body>
 </html>
